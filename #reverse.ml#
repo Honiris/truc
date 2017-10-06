@@ -5,8 +5,8 @@ let reverse nbr=
     let n=String.length nb in
       let rec rev i st=
         match i with
-            0 -> String.get st 0
-          |x -> (string_of_char(String.get st x)) + rev (x-1) st
+            0 -> int_of_char(String.get st 0)
+          |x -> int_of_string((String.make 1 (String.get st x)) + rev (x-1) st
       in
       rev n nbr ;;
 
@@ -56,6 +56,11 @@ let search_pos x l=
   let rec sp x l i=
     match l with
       |[]              -> failwith "search_pos: not found"
-      |e::q -> if x = e then i else 
+      |e::q -> if x = e then i else 0 + sp (i+1)  
   in
   sp x l 0 ;;
+
+
+(* init_list *)
+
+let rec 
