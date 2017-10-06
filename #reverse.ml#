@@ -40,10 +40,12 @@ let nth i l=
   then
     invalid_arg "nth: index has to be positive"
   else
+    begin
     let rec nt k li=
       match (k,li) with
 	|(x,[])   -> failwith "nth: the list should not be empty"  
 	|(0,e::q) -> e
 	|(x,e::q) -> nt (x-1) q
     in
-    nt i l ;;
+    nt i l
+    end ;;
