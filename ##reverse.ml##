@@ -59,3 +59,7 @@ let search_pos x l=
       |e::q -> if x = e then i else 
   in
   sp x l 0 ;;
+
+
+(* init_list *)
+
