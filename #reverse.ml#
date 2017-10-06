@@ -1,0 +1,49 @@
+(* reverse *)
+
+let reverse nbr=
+  let nb=string_of_int nbr in
+    let n=String.length nb in
+      let rec rev i st=
+        match i with
+            0 -> String.get st 0
+          |x -> (string_of_char(String.get st x)) + rev (x-1) st
+      in
+      rev n nbr ;;
+
+   
+(* prime *)
+
+
+
+
+
+
+(* length *)
+
+	   
+let rec length liste=
+   match liste with
+     |[]   -> 0
+     |e::q -> 1 + length q ;;  
+
+(* count *)
+
+let rec count liste x=
+  match liste with
+    |[] -> 0
+    |e::q -> (if e = x then 1 else 0) + count q x ;;
+
+(* nth *)
+
+let nth i l=
+  if i<0
+  then
+    invalid_arg "nth: index has to be positive"
+  else
+    let rec nt k li=
+      match (k,li) with
+	|(x,[])   -> failwith "nth: the list should not be empty"  
+	|(0,e::q) -> e
+	|(x,e::q) -> nt (x-1) q
+    in
+    nt i l ;;
