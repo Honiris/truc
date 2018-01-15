@@ -1,5 +1,0 @@
-let reverse  nbr=
-  let rec rev nbr i=
-    match i with
-	0 -> String.get nbr 0
-       
